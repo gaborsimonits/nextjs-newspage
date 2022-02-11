@@ -1,0 +1,39 @@
+.newsfeed {
+	width: calc(100vw - 30px);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	padding: 15px;
+	justify-content: center;
+}
+
+.newsbox {
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	width: calc(50vw - 30px);
+	background-color: white;
+}
+
+.newsimage {
+	width: 100%;
+}
+
+.newsbox h1,
+.newsbox p,
+.readmore {
+	margin: 10px;
+}
+
+.newsauthor {
+	font-weight: lighter;
+	letter-spacing: 1px;
+	color: rgb(35, 31, 31);
+}
+
+.newsdate {
+	letter-spacing: 2px;
+	font-size: 12px;
+}
+
+.readmore {
+	color: #0070f3;
+}
