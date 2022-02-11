@@ -3,7 +3,7 @@ import cardStyles from "../styles/Card.module.css";
 const Card = ({ news }) => {
 	return (
 		<div className={cardStyles.newsbox}>
-			<img className={cardStyles.newsimage} src={news.urlToImage} alt='' />
+			{/* <img className={cardStyles.newsimage} src={news.urlToImage} alt='' /> */}
 			<h1>{news.title}</h1>
 			{/* <p dangerouslySetInnerHTML={{__html: news.description}}></p> */}
 			<a className={cardStyles.readmore} href={news.url}>
