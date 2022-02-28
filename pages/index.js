@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Card from "../components/Card";
+import NewsList from "../components/NewsList";
 import { Layout } from "../components/Layout";
-import cardStyles from "../styles/Card.module.css";
 
 // const today = new Date().toISOString().split("T")[0];
 
@@ -12,15 +11,12 @@ export const getStaticProps = async () => {
 		// `https://jsonplaceholder.typicode.com/posts?_limit=5`
 	);
 	const data = await res.json();
+	const newsData = data.articles;
+	console.log(newsData);
 
-	const actual = data.articles;
-
-	// console.log(actual);
-
-	// console.log(data.articles[0].title);
 	return {
 		props: {
-			actual,
+			newsData,
 		},
 	};
 };
@@ -30,18 +26,14 @@ export const getStaticProps = async () => {
 // get server side props - fetch on every request - slower
 // get staticpaths - dynamicly generating paths based on data
 
-export default function Home({ actual }) {
+export default function Home({ newsData }) {
 	return (
 		<div>
 			<Head>
 				<title>Top Headlines</title>
 				<meta name='keywords' content='news' />
 			</Head>
-			<div className={cardStyles.newsfeed}>
-				{actual.map((news) => (
-					<Card key={news.title} news={news} />
-				))}
-			</div>
+			<NewsList newsData={newsData} />
 		</div>
 	);
 }
